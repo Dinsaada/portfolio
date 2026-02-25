@@ -3,156 +3,128 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cody Hough | Web Designer</title>
+<title>Cody Hough | Small Business Website Developer</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-* {
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+* { box-sizing:border-box; scroll-behavior:smooth; }
+
+body{
+margin:0;
+font-family:'Inter',sans-serif;
+background:#f9fafb;
+color:#1f2937;
+line-height:1.7;
 }
 
-body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background: #f9fafb;
-    color: #1f2937;
-    line-height: 1.7;
+nav{
+position:sticky;
+top:0;
+background:white;
+padding:15px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+z-index:1000;
 }
 
-/* NAVIGATION */
-nav {
-    position: sticky;
-    top: 0;
-    background: white;
-    padding: 15px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    z-index: 1000;
+nav a{
+text-decoration:none;
+color:#1f2937;
+margin-left:25px;
+font-weight:600;
+font-size:14px;
 }
 
-nav a {
-    text-decoration: none;
-    color: #1f2937;
-    margin-left: 25px;
-    font-weight: 600;
-    font-size: 14px;
+header{
+text-align:center;
+padding:120px 20px 100px;
+background:linear-gradient(135deg,#111827,#1f2937);
+color:white;
 }
 
-nav a:hover {
-    opacity: 0.6;
+header h1{
+font-size:46px;
+max-width:850px;
+margin:auto;
+margin-bottom:20px;
 }
 
-/* HERO */
-header {
-    text-align: center;
-    padding: 100px 20px 80px 20px;
-    background: linear-gradient(135deg, #111827, #1f2937);
-    color: white;
+header p{
+font-size:20px;
+opacity:.85;
+max-width:700px;
+margin:auto;
 }
 
-header h1 {
-    font-size: 44px;
-    margin-bottom: 15px;
+.button{
+display:inline-block;
+margin:30px 10px 0;
+padding:14px 32px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+transition:.3s ease;
 }
 
-header p {
-    font-size: 20px;
-    opacity: 0.85;
-    max-width: 700px;
-    margin: auto;
+.primary{background:white;color:#111827;}
+.secondary{border:2px solid white;color:white;}
+
+section{
+max-width:1100px;
+margin:100px auto;
+padding:0 20px;
 }
 
-.button {
-    display: inline-block;
-    margin: 20px 10px 0 10px;
-    padding: 12px 28px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s ease;
+h2{
+font-size:30px;
+margin-bottom:25px;
 }
 
-.primary {
-    background: white;
-    color: #111827;
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
 }
 
-.secondary {
-    border: 2px solid white;
-    color: white;
+.card{
+background:white;
+padding:30px;
+border-radius:14px;
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
 }
 
-.button:hover {
-    transform: translateY(-3px);
+.price{
+font-size:28px;
+font-weight:700;
+margin:15px 0;
 }
 
-/* SECTIONS */
-section {
-    max-width: 1000px;
-    margin: 80px auto;
-    padding: 0 20px;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s ease;
+form{
+display:grid;
+gap:15px;
+max-width:600px;
 }
 
-section.visible {
-    opacity: 1;
-    transform: translateY(0);
+input,textarea,select{
+padding:12px;
+border-radius:6px;
+border:1px solid #ddd;
+font-family:inherit;
 }
 
-h2 {
-    font-size: 26px;
-    margin-bottom: 25px;
+textarea{
+min-height:120px;
+resize:vertical;
 }
 
-/* PROJECTS */
-.projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-}
-
-.project-card {
-    background: white;
-    padding: 25px;
-    border-radius: 14px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-    transition: 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-}
-
-.project-card h3 {
-    margin-top: 0;
-}
-
-/* SKILLS */
-.skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-.skill {
-    background: #111827;
-    color: white;
-    padding: 8px 16px;
-    border-radius: 30px;
-    font-size: 14px;
-}
-
-footer {
-    text-align: center;
-    padding: 40px;
-    font-size: 14px;
-    color: #6b7280;
+footer{
+text-align:center;
+padding:40px;
+font-size:14px;
+color:#6b7280;
 }
 </style>
 </head>
@@ -160,98 +132,147 @@ footer {
 <body>
 
 <nav>
-    <div><strong>Cody Hough</strong></div>
-    <div>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </div>
+<div><strong>Cody Hough</strong></div>
+<div>
+<a href="#work">Work</a>
+<a href="#pricing">Pricing</a>
+<a href="#contact">Contact</a>
+</div>
 </nav>
 
 <header>
-    <h1>I build clean, modern websites for small businesses.</h1>
-    <p>
-        Operations-minded web designer with leadership experience and a systems-first approach.
-        I focus on clarity, usability, and professional digital presence.
-    </p>
-    <a href="#projects" class="button primary">View Projects</a>
-    <a href="assets/documents/Resume.pdf" class="button secondary" download>Download Resume</a>
+<h1>Fast, Mobile-First Websites for Local Service Businesses.</h1>
+<p>
+I build clean, professional websites designed to increase phone calls,
+build trust, and convert visitors into customers.
+</p>
+<a href="#contact" class="button primary">Get a Quote</a>
+<a href="#work" class="button secondary">View Example Work</a>
 </header>
 
-<section id="about">
-    <h2>About Me</h2>
-    <p>
-        With 7+ years leading high-volume retail operations, I bring structure,
-        reliability, and problem-solving into web development. I build responsive,
-        user-focused websites designed to help businesses look credible and convert visitors.
-    </p>
-</section>
-
-<section id="projects">
-    <h2>Featured Projects</h2>
-    <div class="projects">
-
-        <div class="project-card">
-            <h3>TaskFlow – Interactive Dashboard Application</h3>
-            <p>Modern front-end dashboard built with vanilla JavaScript featuring dynamic task management, theme switching, filtering, and persistent local state.</p>
-            <a href="https://dashboarduidemo.netlify.app">View Demo</a>
-        </div>
-
-        <div class="project-card">
-            <h3>Nail Salon Website</h3>
-            <p>Clean, responsive small-business site designed to showcase services and improve booking conversions.</p>
-            <a href="https://nailsalondemo.netlify.app">View Demo</a>
-        </div>
-
-        <div class="project-card">
-            <h3>HVAC Service Website</h3>
-            <p>Service-focused layout built to communicate trust, expertise, and fast customer contact.</p>
-            <a href="https://smallbusinessdemo.netlify.app">View Demo</a>
-        </div>
-
-    </div>
-</section>
-
 <section>
-    <h2>Core Strengths</h2>
-    <div class="skills">
-        <div class="skill">Responsive Website Development</div>
-        <div class="skill">Small Business Web Design</div>
-        <div class="skill">UX-Focused Layout Structure</div>
-        <div class="skill">Conversion-Oriented Design</div>
-        <div class="skill">Systems Thinking</div>
-        <div class="skill">Leadership & Operations</div>
-    </div>
+<h2>Built for Small Business Growth</h2>
+<ul>
+<li>✔ Mobile-first responsive design</li>
+<li>✔ Clear structure & strong calls-to-action</li>
+<li>✔ Fast loading & optimized performance</li>
+<li>✔ Professional, trust-building layouts</li>
+</ul>
 </section>
 
-<section id="contact">
-    <h2>Contact</h2>
-    <p>Email: Mr_h_primary@outlook.com</p>
-    <p>Phoenix, AZ </p>
+<section id="work">
+<h2>Example Small Business Websites</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>HVAC Service Website</h3>
+<p>Mobile-first layout focused on fast contact and service clarity.</p>
+<a href="https://smallbusinessdemo.netlify.app" target="_blank">View Example</a>
+</div>
+
+<div class="card">
+<h3>Nail Salon Website</h3>
+<p>Modern, clean design showcasing services and pricing clearly.</p>
+<a href="https://nailsalondemo.netlify.app" target="_blank">View Example</a>
+</div>
+
+<div class="card">
+<h3>High-Performance Landing Page</h3>
+<p>Lightweight landing page optimized for speed and conversions.</p>
+<a href="https://dashboarduidemo.netlify.app" target="_blank">View Example</a>
+</div>
+
+</div>
 </section>
+
+<section id="pricing">
+<h2>Simple, Transparent Pricing</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Starter Website</h3>
+<div class="price">$450</div>
+<p>3–4 page website for small businesses.</p>
+<ul>
+<li>Responsive design</li>
+<li>Contact form</li>
+<li>Basic SEO setup</li>
+<li>Fast loading</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Growth Website</h3>
+<div class="price">$750</div>
+<p>5–7 page site built for stronger conversions.</p>
+<ul>
+<li>Custom layout</li>
+<li>Multiple CTAs</li>
+<li>SEO optimization</li>
+<li>Analytics integration</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Landing Page</h3>
+<div class="price">$250</div>
+<p>High-performance single page for ads or campaigns.</p>
+</div>
+
+</div>
+
+<p style="margin-top:30px;">
+Final pricing depends on features and scope. Contact me for a quick estimate.
+</p>
+</section>
+
+<!-- ✅ NETLIFY FORM START -->
+<section id="contact">
+<h2>Request a Free Website Quote</h2>
+
+<p>
+Tell me a little about your business and what you need.
+I usually respond within 24 hours.
+</p>
+
+<form
+name="contact"
+method="POST"
+data-netlify="true"
+action="/thank-you.html"
+>
+
+<input type="hidden" name="form-name" value="contact">
+
+<input type="text" name="name" placeholder="Your Name" required>
+
+<input type="tel" name="phone" placeholder="Phone Number (optional)">
+
+<input type="email" name="email" placeholder="Your Email" required>
+
+<select name="project_type">
+<option value="">What do you need?</option>
+<option>New Website</option>
+<option>Website Redesign</option>
+<option>Landing Page</option>
+<option>Not Sure Yet</option>
+</select>
+
+<textarea name="message"
+placeholder="Briefly describe your business and what you'd like built..."
+required></textarea>
+
+<button type="submit" class="button primary">Get My Quote</button>
+
+</form>
+</section>
+<!-- ✅ NETLIFY FORM END -->
 
 <footer>
-    © 2026 Cody Hough | Web Designer
+© 2026 Cody Hough | Small Business Website Developer
 </footer>
 
-<script>
-/* Fade-in animation on scroll */
-const sections = document.querySelectorAll("section");
-
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-        }
-    });
-}, { threshold: 0.1 });
-
-sections.forEach(section => {
-    observer.observe(section);
-});
-</script>
-
 </body>
-
 </html>
-
