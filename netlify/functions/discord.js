@@ -8,19 +8,20 @@ exports.handler = async (event) => {
   }
 
   const body = JSON.parse(event.body);
-  const data = body.payload?.data || body;
 
-  // Build message dynamically from all fields
-  let formatted = "🔥 NEW WEBSITE LEAD\n\n";
+  // REAL form fields live here
+  const formData = body.payload?.data || {};
 
-  for (const key in data) {
-    formatted += `${key}: ${data[key]}\n`;
-  }
+  let message = "🔥 NEW WEBSITE LEAD\n\n";
+
+  Object.entries(formData).forEach(([key, value]) => {
+    message += `${key}: ${value}\n`;
+  });
 
   await fetch(process.env.DISCORD_WEBHOOK, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ content: formatted })
+    body: JSON.stringify({ content: message })
   });
 
   return {
