@@ -9,14 +9,19 @@ exports.handler = async (event) => {
 
   const body = JSON.parse(event.body);
 
-  // REAL form fields live here
-  const formData = body.payload?.data || {};
+  // Netlify may send fields in different places
+  const formData =
+    body.payload?.data ||
+    body.payload?.human_fields ||
+    body.human_fields ||
+    body.data ||
+    {};
 
   let message = "🔥 NEW WEBSITE LEAD\n\n";
 
-  Object.entries(formData).forEach(([key, value]) => {
+  for (const [key, value] of Object.entries(formData)) {
     message += `${key}: ${value}\n`;
-  });
+  }
 
   await fetch(process.env.DISCORD_WEBHOOK, {
     method: "POST",
