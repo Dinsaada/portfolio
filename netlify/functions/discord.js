@@ -1,34 +1,26 @@
 exports.handler = async (event) => {
 
-  // Allow browser test
   if (!event.body) {
     return {
       statusCode: 200,
-      body: "Discord function ready"
+      body: "Discord function alive"
     };
   }
 
-  const data = JSON.parse(event.body);
+  const body = JSON.parse(event.body);
+  const data = body.payload?.data || body;
 
-  const message = {
-    content:
-`🔥 NEW WEBSITE LEAD
+  // Build message dynamically from all fields
+  let formatted = "🔥 NEW WEBSITE LEAD\n\n";
 
-Name: ${data.name || "N/A"}
-Email: ${data.email || "N/A"}
-Phone: ${data.phone || "N/A"}
-Project: ${data.project_type || "N/A"}
-
-Message:
-${data.message || "N/A"}`
-  };
+  for (const key in data) {
+    formatted += `${key}: ${data[key]}\n`;
+  }
 
   await fetch(process.env.DISCORD_WEBHOOK, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(message)
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ content: formatted })
   });
 
   return {
