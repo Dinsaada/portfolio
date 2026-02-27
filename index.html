@@ -3,128 +3,275 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cody Hough | Small Business Website Developer</title>
+<title>Cody Hough | Premium Small Business Websites</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-* { box-sizing:border-box; scroll-behavior:smooth; }
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+scroll-behavior:smooth;
+}
 
 body{
-margin:0;
 font-family:'Inter',sans-serif;
-background:#f9fafb;
-color:#1f2937;
-line-height:1.7;
+background:#0f172a;
+color:#f1f5f9;
+line-height:1.6;
 }
 
 nav{
-position:sticky;
+position:fixed;
+width:100%;
 top:0;
-background:white;
-padding:15px 40px;
+left:0;
+padding:20px 60px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-box-shadow:0 2px 10px rgba(0,0,0,0.05);
+background:rgba(15,23,42,.85);
+backdrop-filter:blur(10px);
 z-index:1000;
 }
 
 nav a{
+color:#f1f5f9;
 text-decoration:none;
-color:#1f2937;
-margin-left:25px;
+margin-left:30px;
 font-weight:600;
 font-size:14px;
 }
 
+nav a:hover{
+color:#38bdf8;
+}
+
 header{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
-padding:120px 20px 100px;
-background:linear-gradient(135deg,#111827,#1f2937);
-color:white;
+padding:120px 20px 80px;
+background:
+linear-gradient(rgba(15,23,42,.85), rgba(15,23,42,.9)),
+url("https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=2000&q=80");
+background-size:cover;
+background-position:center;
 }
 
 header h1{
-font-size:46px;
-max-width:850px;
-margin:auto;
-margin-bottom:20px;
+font-size:56px;
+font-weight:800;
+max-width:900px;
+margin-bottom:25px;
 }
 
 header p{
-font-size:20px;
-opacity:.85;
+font-size:22px;
 max-width:700px;
-margin:auto;
+opacity:.85;
+margin-bottom:40px;
 }
 
 .button{
 display:inline-block;
-margin:30px 10px 0;
-padding:14px 32px;
+padding:16px 36px;
 border-radius:8px;
-text-decoration:none;
 font-weight:600;
+text-decoration:none;
 transition:.3s ease;
+margin:10px;
 }
 
-.primary{background:white;color:#111827;}
-.secondary{border:2px solid white;color:white;}
+.primary{
+background:#38bdf8;
+color:#0f172a;
+}
+
+.primary:hover{
+background:#0ea5e9;
+}
+
+.secondary{
+border:2px solid #38bdf8;
+color:#38bdf8;
+}
+
+.secondary:hover{
+background:#38bdf8;
+color:#0f172a;
+}
 
 section{
-max-width:1100px;
-margin:100px auto;
-padding:0 20px;
+max-width:1200px;
+margin:120px auto;
+padding:0 30px;
 }
 
 h2{
-font-size:30px;
-margin-bottom:25px;
+font-size:36px;
+font-weight:800;
+margin-bottom:50px;
+text-align:center;
 }
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:50px;
 }
 
-.card{
-background:white;
-padding:30px;
-border-radius:14px;
-box-shadow:0 10px 25px rgba(0,0,0,0.05);
+.demo-card{
+position:relative;
+border-radius:20px;
+overflow:hidden;
+background:#1e293b;
+box-shadow:0 25px 60px rgba(0,0,0,.5);
+transition:.4s ease;
+}
+
+.demo-card:hover{
+transform:translateY(-10px);
+box-shadow:0 35px 80px rgba(0,0,0,.7);
+}
+
+.browser-bar{
+height:35px;
+background:#111827;
+display:flex;
+align-items:center;
+padding:0 12px;
+gap:6px;
+}
+
+.dot{
+width:10px;
+height:10px;
+border-radius:50%;
+}
+
+.red{background:#ef4444;}
+.yellow{background:#facc15;}
+.green{background:#22c55e;}
+
+.demo-card img{
+width:100%;
+display:block;
+}
+
+/* Hover Overlay */
+
+.overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(rgba(15,23,42,.95), rgba(15,23,42,.98));
+color:#fff;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:40px;
+opacity:0;
+transition:.4s ease;
+}
+
+.demo-card:hover .overlay{
+opacity:1;
+}
+
+.overlay h3{
+font-size:26px;
+margin-bottom:15px;
+}
+
+.overlay p{
+opacity:.85;
+margin-bottom:25px;
+max-width:300px;
+}
+
+.overlay a{
+padding:12px 28px;
+background:#38bdf8;
+color:#0f172a;
+border-radius:8px;
+font-weight:700;
+text-decoration:none;
+transition:.3s ease;
+}
+
+.overlay a:hover{
+background:#0ea5e9;
 }
 
 .price{
-font-size:28px;
-font-weight:700;
+font-size:32px;
+font-weight:800;
 margin:15px 0;
+color:#38bdf8;
+}
+
+.card{
+background:#1e293b;
+border-radius:18px;
+padding:40px;
+box-shadow:0 20px 50px rgba(0,0,0,.4);
+}
+
+.cta-section{
+text-align:center;
+padding:100px 20px;
+background:linear-gradient(135deg,#1e293b,#0f172a);
+border-radius:20px;
 }
 
 form{
 display:grid;
-gap:15px;
+gap:18px;
 max-width:600px;
+margin:40px auto 0;
 }
 
 input,textarea,select{
-padding:12px;
-border-radius:6px;
-border:1px solid #ddd;
+padding:14px;
+border-radius:8px;
+border:none;
 font-family:inherit;
 }
 
 textarea{
-min-height:120px;
+min-height:140px;
 resize:vertical;
+}
+
+button{
+padding:16px;
+border:none;
+border-radius:8px;
+background:#38bdf8;
+color:#0f172a;
+font-weight:700;
+cursor:pointer;
+transition:.3s ease;
+}
+
+button:hover{
+background:#0ea5e9;
 }
 
 footer{
 text-align:center;
-padding:40px;
+padding:60px 20px;
+opacity:.6;
 font-size:14px;
-color:#6b7280;
 }
 </style>
 </head>
@@ -141,117 +288,98 @@ color:#6b7280;
 </nav>
 
 <header>
-<h1>Fast, Mobile-First Websites for Local Service Businesses.</h1>
+<h1>Premium, High-Converting Websites for Local Service Businesses</h1>
 <p>
-I build clean, professional websites designed to increase phone calls,
-build trust, and convert visitors into customers.
+Bold design. Fast performance. Built to turn visitors into real customers.
 </p>
-<a href="#contact" class="button primary">Get a Quote</a>
-<a href="#work" class="button secondary">View Example Work</a>
+<a href="#contact" class="button primary">Start My Project</a>
+<a href="#work" class="button secondary">See Demo Sites</a>
 </header>
 
-<section>
-<h2>Built for Small Business Growth</h2>
-<ul>
-<li>✔ Mobile-first responsive design</li>
-<li>✔ Clear structure & strong calls-to-action</li>
-<li>✔ Fast loading & optimized performance</li>
-<li>✔ Professional, trust-building layouts</li>
-</ul>
-</section>
-
 <section id="work">
-<h2>Example Landing Pages</h2>
+<h2>Featured Demo Websites</h2>
 
 <div class="grid">
 
-<div class="card">
-<h3>HVAC Service Demo</h3>
-<p>Mobile-first layout focused on fast contact and service clarity.</p>
-<a href="https://smallbusinessdemo.netlify.app" target="_blank">View Example</a>
+<!-- Demo 1 -->
+<div class="demo-card">
+<div class="browser-bar">
+<div class="dot red"></div>
+<div class="dot yellow"></div>
+<div class="dot green"></div>
+</div>
+<img src="https://image.thum.io/get/width/1200/https://smallbusinessdemo.netlify.app/" alt="Service Business Demo Screenshot">
+<div class="overlay">
+<h3>Service-Focused Website</h3>
+<p>Conversion-driven layout with strong CTAs, service sections, and local trust positioning.</p>
+<a href="https://smallbusinessdemo.netlify.app/" target="_blank">View Live Site</a>
+</div>
 </div>
 
-<div class="card">
-<h3>Hair Salon Demo</h3>
-<p>Modern, clean design showcasing services and pricing clearly.</p>
-<a href="https://hsalondemo.netlify.app" target="_blank">View Example</a>
+<!-- Demo 2 -->
+<div class="demo-card">
+<div class="browser-bar">
+<div class="dot red"></div>
+<div class="dot yellow"></div>
+<div class="dot green"></div>
+</div>
+<img src="https://image.thum.io/get/width/1200/https://hsalondemo.netlify.app/" alt="Salon Website Screenshot">
+<div class="overlay">
+<h3>Salon & Team Showcase</h3>
+<p>Stylish service presentation with team profiles and appointment-driven structure.</p>
+<a href="https://hsalondemo.netlify.app/" target="_blank">View Live Site</a>
+</div>
 </div>
 
-<div class="card">
-<h3>Private Practice Demo</h3>
-<p>Lightweight landing page optimized for speed and conversions.</p>
-<a href="https://privatepracticedemo.netlify.app" target="_blank">View Example</a>
+<!-- Demo 3 -->
+<div class="demo-card">
+<div class="browser-bar">
+<div class="dot red"></div>
+<div class="dot yellow"></div>
+<div class="dot green"></div>
+</div>
+<img src="https://image.thum.io/get/width/1200/https://privatepracticedemo.netlify.app/" alt="Therapy Website Screenshot">
+<div class="overlay">
+<h3>Therapy & Wellness Site</h3>
+<p>Trust-building layout focused on calm design, bio credibility, and consultation CTA.</p>
+<a href="https://privatepracticedemo.netlify.app/" target="_blank">View Live Site</a>
+</div>
 </div>
 
 </div>
 </section>
 
 <section id="pricing">
-<h2>Simple, Transparent Pricing</h2>
-
+<h2>Premium Pricing</h2>
 <div class="grid">
-
 <div class="card">
 <h3>Starter Website</h3>
 <div class="price">$450</div>
-<p>3–4 page website for small businesses.</p>
-<ul>
-<li>Responsive design</li>
-<li>Contact form</li>
-<li>Basic SEO setup</li>
-<li>Fast loading</li>
-</ul>
+<p>3–4 page website with responsive design and contact system.</p>
 </div>
-
 <div class="card">
 <h3>Growth Website</h3>
 <div class="price">$750</div>
-<p>5–7 page site built for stronger conversions.</p>
-<ul>
-<li>Custom layout</li>
-<li>Multiple CTAs</li>
-<li>SEO optimization</li>
-<li>Analytics integration</li>
-</ul>
+<p>5–7 page site optimized for stronger lead generation.</p>
 </div>
-
 <div class="card">
 <h3>Landing Page</h3>
 <div class="price">$250</div>
-<p>High-performance single page for ads or campaigns.</p>
+<p>High-performance single-page built for ads or campaigns.</p>
 </div>
-
 </div>
-
-<p style="margin-top:30px;">
-Final pricing depends on features and scope. Contact me for a quick estimate.
-</p>
 </section>
 
-<!-- ✅ NETLIFY FORM START -->
 <section id="contact">
-<h2>Request a Free Website Quote</h2>
+<div class="cta-section">
+<h2>Let’s Build Something That Grows Your Business</h2>
+<p>I respond within 24 hours. Tell me about your project.</p>
 
-<p>
-Tell me a little about your business and what you need.
-I usually respond within 24 hours.
-</p>
-
-<form
-name="contact"
-method="POST"
-data-netlify="true"
-action="/thank-you.html"
->
-
+<form name="contact" method="POST" data-netlify="true" action="/thank-you.html">
 <input type="hidden" name="form-name" value="contact">
-
 <input type="text" name="name" placeholder="Your Name" required>
-
 <input type="tel" name="phone" placeholder="Phone Number (optional)">
-
 <input type="email" name="email" placeholder="Your Email" required>
-
 <select name="project_type">
 <option value="">What do you need?</option>
 <option>New Website</option>
@@ -259,19 +387,15 @@ action="/thank-you.html"
 <option>Landing Page</option>
 <option>Not Sure Yet</option>
 </select>
-
-<textarea name="message"
-placeholder="Briefly describe your business and what you'd like built..."
-required></textarea>
-
-<button type="submit" class="button primary">Get My Quote</button>
-
+<textarea name="message" placeholder="Briefly describe your project..." required></textarea>
+<button type="submit">Request My Quote</button>
 </form>
+
+</div>
 </section>
-<!-- ✅ NETLIFY FORM END -->
 
 <footer>
-© 2026 Cody Hough | Small Business Website Developer
+© 2026 Cody Hough | Premium Small Business Website Developer
 </footer>
 
 </body>
