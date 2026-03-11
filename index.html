@@ -3,11 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cody Hough | Premium Small Business Websites</title>
+<title>Cody Hough | Small Business Websites Starting at $250</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+
 *{
 box-sizing:border-box;
 margin:0;
@@ -64,7 +65,7 @@ background-position:center;
 }
 
 header h1{
-font-size:56px;
+font-size:54px;
 font-weight:800;
 max-width:900px;
 margin-bottom:25px;
@@ -74,7 +75,18 @@ header p{
 font-size:22px;
 max-width:700px;
 opacity:.85;
-margin-bottom:40px;
+margin-bottom:30px;
+}
+
+.trust{
+display:flex;
+gap:20px;
+margin-top:10px;
+margin-bottom:30px;
+flex-wrap:wrap;
+justify-content:center;
+font-size:15px;
+opacity:.85;
 }
 
 .button{
@@ -104,6 +116,12 @@ color:#38bdf8;
 .secondary:hover{
 background:#38bdf8;
 color:#0f172a;
+}
+
+.phone{
+margin-top:15px;
+font-size:16px;
+opacity:.9;
 }
 
 section{
@@ -163,8 +181,6 @@ width:100%;
 display:block;
 }
 
-/* Hover Overlay */
-
 .overlay{
 position:absolute;
 top:0;
@@ -172,7 +188,6 @@ left:0;
 width:100%;
 height:100%;
 background:linear-gradient(rgba(15,23,42,.95), rgba(15,23,42,.98));
-color:#fff;
 display:flex;
 flex-direction:column;
 justify-content:center;
@@ -205,15 +220,10 @@ color:#0f172a;
 border-radius:8px;
 font-weight:700;
 text-decoration:none;
-transition:.3s ease;
-}
-
-.overlay a:hover{
-background:#0ea5e9;
 }
 
 .price{
-font-size:32px;
+font-size:36px;
 font-weight:800;
 margin:15px 0;
 color:#38bdf8;
@@ -226,6 +236,19 @@ padding:40px;
 box-shadow:0 20px 50px rgba(0,0,0,.4);
 }
 
+.why{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:40px;
+text-align:center;
+}
+
+.why div{
+background:#1e293b;
+padding:30px;
+border-radius:16px;
+}
+
 .cta-section{
 text-align:center;
 padding:100px 20px;
@@ -236,20 +259,15 @@ border-radius:20px;
 form{
 display:grid;
 gap:18px;
-max-width:600px;
+max-width:500px;
 margin:40px auto 0;
 }
 
-input,textarea,select{
+input,textarea{
 padding:14px;
 border-radius:8px;
 border:none;
 font-family:inherit;
-}
-
-textarea{
-min-height:140px;
-resize:vertical;
 }
 
 button{
@@ -260,11 +278,6 @@ background:#38bdf8;
 color:#0f172a;
 font-weight:700;
 cursor:pointer;
-transition:.3s ease;
-}
-
-button:hover{
-background:#0ea5e9;
 }
 
 footer{
@@ -273,6 +286,16 @@ padding:60px 20px;
 opacity:.6;
 font-size:14px;
 }
+
+.faq{
+max-width:800px;
+margin:auto;
+}
+
+.faq div{
+margin-bottom:25px;
+}
+
 </style>
 </head>
 
@@ -281,67 +304,80 @@ font-size:14px;
 <nav>
 <div><strong>Cody Hough</strong></div>
 <div>
-<a href="#work">Work</a>
+<a href="#work">Examples</a>
 <a href="#pricing">Pricing</a>
 <a href="#contact">Contact</a>
 </div>
 </nav>
 
 <header>
-<h1>Premium, High-Converting Websites for Local Service Businesses</h1>
+
+<h1>Small Business Websites Starting at $250</h1>
+
 <p>
-Bold design. Fast performance. Built to turn visitors into real customers.
+Fast, mobile-first websites designed to bring in real customers.
+Launch your business online in days, not weeks.
 </p>
-<a href="#contact" class="button primary">Start My Project</a>
-<a href="#work" class="button secondary">See Demo Sites</a>
+
+<div class="trust">
+<span>⚡ Fast Turnaround</span>
+<span>📱 Mobile-First Design</span>
+<span>📈 Built to Generate Leads</span>
+</div>
+
+<a href="#contact" class="button primary">Get My Website Quote</a>
+<a href="#work" class="button secondary">View Example Websites</a>
+
+<div class="phone">
+Prefer to talk? Call <strong>(602) 767-2639</strong>
+</div>
+
 </header>
 
+
 <section id="work">
-<h2>Featured Demo Websites</h2>
+<h2>Example Websites for Small Businesses</h2>
 
 <div class="grid">
 
-<!-- Demo 1 -->
 <div class="demo-card">
 <div class="browser-bar">
 <div class="dot red"></div>
 <div class="dot yellow"></div>
 <div class="dot green"></div>
 </div>
-<img src="https://image.thum.io/get/width/1200/https://smallbusinessdemo.netlify.app/" alt="Service Business Demo Screenshot">
+<img src="https://image.thum.io/get/width/1200/https://smallbusinessdemo.netlify.app/">
 <div class="overlay">
-<h3>Service-Focused Website</h3>
-<p>Conversion-driven layout with strong CTAs, service sections, and local trust positioning.</p>
+<h3>Service Business Website</h3>
+<p>Lead-focused design with strong calls-to-action and trust sections.</p>
 <a href="https://smallbusinessdemo.netlify.app/" target="_blank">View Live Site</a>
 </div>
 </div>
 
-<!-- Demo 2 -->
 <div class="demo-card">
 <div class="browser-bar">
 <div class="dot red"></div>
 <div class="dot yellow"></div>
 <div class="dot green"></div>
 </div>
-<img src="https://image.thum.io/get/width/1200/https://hsalondemo.netlify.app/" alt="Salon Website Screenshot">
+<img src="https://image.thum.io/get/width/1200/https://hsalondemo.netlify.app/">
 <div class="overlay">
-<h3>Salon & Team Showcase</h3>
-<p>Stylish service presentation with team profiles and appointment-driven structure.</p>
+<h3>Salon Website</h3>
+<p>Clean layout showcasing services and encouraging appointments.</p>
 <a href="https://hsalondemo.netlify.app/" target="_blank">View Live Site</a>
 </div>
 </div>
 
-<!-- Demo 3 -->
 <div class="demo-card">
 <div class="browser-bar">
 <div class="dot red"></div>
 <div class="dot yellow"></div>
 <div class="dot green"></div>
 </div>
-<img src="https://image.thum.io/get/width/1200/https://privatepracticedemo.netlify.app/" alt="Therapy Website Screenshot">
+<img src="https://image.thum.io/get/width/1200/https://privatepracticedemo.netlify.app/">
 <div class="overlay">
-<h3>Therapy & Wellness Site</h3>
-<p>Trust-building layout focused on calm design, bio credibility, and consultation CTA.</p>
+<h3>Professional Practice</h3>
+<p>Trust-focused layout designed to convert visitors into consultations.</p>
 <a href="https://privatepracticedemo.netlify.app/" target="_blank">View Live Site</a>
 </div>
 </div>
@@ -349,53 +385,126 @@ Bold design. Fast performance. Built to turn visitors into real customers.
 </div>
 </section>
 
+
 <section id="pricing">
-<h2>Premium Pricing</h2>
+
+<h2>Simple Transparent Pricing</h2>
+
 <div class="grid">
-<div class="card">
-<h3>Starter Website</h3>
-<div class="price">$450</div>
-<p>3–4 page website with responsive design and contact system.</p>
-</div>
-<div class="card">
-<h3>Growth Website</h3>
-<div class="price">$750</div>
-<p>5–7 page site optimized for stronger lead generation.</p>
-</div>
+
 <div class="card">
 <h3>Landing Page</h3>
 <div class="price">$250</div>
-<p>High-performance single-page built for ads or campaigns.</p>
+<p>High-converting single page built for ads or service businesses.</p>
 </div>
+
+<div class="card">
+<h3>Starter Website</h3>
+<div class="price">$450</div>
+<p>3–4 page professional website with contact system and mobile design.</p>
 </div>
+
+<div class="card">
+<h3>Growth Website</h3>
+<div class="price">$750</div>
+<p>5–7 page business site built to generate leads and customers.</p>
+</div>
+
+</div>
+
 </section>
 
+
+<section>
+
+<h2>Why Small Businesses Choose Cody Hough</h2>
+
+<div class="why">
+
+<div>
+<h3>⚡ Fast Launch</h3>
+<p>Most websites launch within 3–5 days.</p>
+</div>
+
+<div>
+<h3>📱 Mobile-First</h3>
+<p>Sites are optimized for phones where most customers browse.</p>
+</div>
+
+<div>
+<h3>💰 Affordable</h3>
+<p>Professional websites without agency-level pricing.</p>
+</div>
+
+<div>
+<h3>📈 Built to Convert</h3>
+<p>Designed to turn visitors into real business leads.</p>
+</div>
+
+</div>
+
+</section>
+
+
 <section id="contact">
+
 <div class="cta-section">
-<h2>Let’s Build Something That Grows Your Business</h2>
-<p>I respond within 24 hours. Tell me about your project.</p>
+
+<h2>Start Your Website Project</h2>
+
+<p>
+Tell me about your business. I typically respond within 24 hours.
+</p>
 
 <form name="contact" method="POST" data-netlify="true" action="/thank-you.html">
 <input type="hidden" name="form-name" value="contact">
+
 <input type="text" name="name" placeholder="Your Name" required>
-<input type="tel" name="phone" placeholder="Phone Number (optional)">
-<input type="email" name="email" placeholder="Your Email" required>
-<select name="project_type">
-<option value="">What do you need?</option>
-<option>New Website</option>
-<option>Website Redesign</option>
-<option>Landing Page</option>
-<option>Not Sure Yet</option>
-</select>
-<textarea name="message" placeholder="Briefly describe your project..." required></textarea>
-<button type="submit">Request My Quote</button>
+<input type="email" name="email" placeholder="Email" required>
+<input type="text" name="business" placeholder="Business Type">
+<textarea name="message" placeholder="What type of website do you need?"></textarea>
+
+<button type="submit">Get My Website Quote</button>
+
 </form>
 
+<p style="margin-top:20px;font-size:14px;opacity:.7;">
+New client spots available this week • Typical launch time: 3-5 days
+</p>
+
 </div>
+
 </section>
 
+
+<section>
+
+<h2>Common Questions</h2>
+
+<div class="faq">
+
+<div>
+<strong>How long does a website take?</strong>
+<p>Most websites launch within 3–5 days depending on content.</p>
+</div>
+
+<div>
+<strong>Do I need hosting?</strong>
+<p>I can help set up hosting or use your existing provider.</p>
+</div>
+
+<div>
+<strong>Can I update the site later?</strong>
+<p>Yes. Websites are built so content can be updated easily.</p>
+</div>
+
+</div>
+
+</section>
+
+
 <footer>
-© 2026 Cody Hough | Premium Small Business Website Developer
+© 2026 Cody Hough | Small Business Website Developer
 </footer>
 
 </body>
