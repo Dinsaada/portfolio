@@ -9,7 +9,6 @@ exports.handler = async (event) => {
 
   const body = JSON.parse(event.body);
 
-  // Netlify may send fields in different places
   const formData =
     body.payload?.data ||
     body.payload?.human_fields ||
@@ -20,6 +19,13 @@ exports.handler = async (event) => {
   let message = "🔥 NEW WEBSITE LEAD\n\n";
 
   for (const [key, value] of Object.entries(formData)) {
+
+    if (
+      key === "confirm-email" ||
+      key === "bot-field" ||
+      key === "form-name"
+    ) continue;
+
     message += `${key}: ${value}\n`;
   }
 

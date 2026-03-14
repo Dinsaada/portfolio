@@ -296,6 +296,12 @@ margin:auto;
 margin-bottom:25px;
 }
 
+.error{
+color:#f87171;
+display:none;
+font-size:14px;
+}
+
 </style>
 </head>
 
@@ -415,37 +421,6 @@ Prefer to talk? Call <strong>(602) 767-2639</strong>
 </section>
 
 
-<section>
-
-<h2>Why Small Businesses Choose Cody Hough</h2>
-
-<div class="why">
-
-<div>
-<h3>⚡ Fast Launch</h3>
-<p>Most websites launch within 3–5 days.</p>
-</div>
-
-<div>
-<h3>📱 Mobile-First</h3>
-<p>Sites are optimized for phones where most customers browse.</p>
-</div>
-
-<div>
-<h3>💰 Affordable</h3>
-<p>Professional websites without agency-level pricing.</p>
-</div>
-
-<div>
-<h3>📈 Built to Convert</h3>
-<p>Designed to turn visitors into real business leads.</p>
-</div>
-
-</div>
-
-</section>
-
-
 <section id="contact">
 
 <div class="cta-section">
@@ -456,13 +431,27 @@ Prefer to talk? Call <strong>(602) 767-2639</strong>
 Tell me about your business. I typically respond within 24 hours.
 </p>
 
-<form name="contact" method="POST" data-netlify="true" action="/thank-you.html">
+<form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thank-you.html" id="contact-form">
+
 <input type="hidden" name="form-name" value="contact">
 
+<p style="display:none">
+<label>Don't fill this out if you're human: <input name="bot-field"></label>
+</p>
+
 <input type="text" name="name" placeholder="Your Name" required>
-<input type="email" name="email" placeholder="Email" required>
+
+<input type="email" id="email" name="email" placeholder="Email" required>
+
+<input type="email" id="confirm-email" name="confirm-email" placeholder="Confirm Email" required>
+
+<input type="tel" name="phone" placeholder="Phone Number (optional)" pattern="[0-9+\-\s()]*">
+
 <input type="text" name="business" placeholder="Business Type">
-<textarea name="message" placeholder="What type of website do you need?"></textarea>
+
+<textarea name="message" placeholder="What type of website do you need?" required></textarea>
+
+<p id="email-error" class="error">Emails do not match. Please check them.</p>
 
 <button type="submit">Get My Website Quote</button>
 
@@ -477,35 +466,33 @@ New client spots available this week • Typical launch time: 3-5 days
 </section>
 
 
-<section>
-
-<h2>Common Questions</h2>
-
-<div class="faq">
-
-<div>
-<strong>How long does a website take?</strong>
-<p>Most websites launch within 3–5 days depending on content.</p>
-</div>
-
-<div>
-<strong>Do I need hosting?</strong>
-<p>I can help set up hosting or use your existing provider.</p>
-</div>
-
-<div>
-<strong>Can I update the site later?</strong>
-<p>Yes. Websites are built so content can be updated easily.</p>
-</div>
-
-</div>
-
-</section>
-
-
 <footer>
 © 2026 Cody Hough | Small Business Website Developer
 </footer>
+
+
+<script>
+
+const form = document.getElementById("contact-form");
+
+form.addEventListener("submit", function(e){
+
+const email = document.getElementById("email").value.trim();
+const confirmEmail = document.getElementById("confirm-email").value.trim();
+const error = document.getElementById("email-error");
+
+if(email !== confirmEmail){
+e.preventDefault();
+error.style.display = "block";
+return;
+}
+
+error.style.display = "none";
+
+});
+
+</script>
+
 
 </body>
 </html>
